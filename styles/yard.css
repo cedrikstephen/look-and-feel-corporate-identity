@@ -11,10 +11,101 @@ html {
 }
 
 body {
-  justify-content: center;
+  --primary-font: "Archivo", verdana;
+  --secondary-font: "Martian Mono", sans-serif;
+  --white: #ffffff;
+  --black: #000000;
+  --grey: #666666;
+  --blue: #364bf7;
+  --important: #f7e19f;
+  --letter-spacing: -0.04em; /* -4% van de font size */
+
+  /* spacing */
+  --size-xs: 0.5rem;
+  --size-sm: 1rem;
+  --size-md: 2rem;
+  --size-lg: 3rem;
+  --size-xl: 4rem;
+  --size-xxl: 6rem;
+
+  /* default */
+  background: var(--white);
+  font-family: var(--primary-font);
+}
+
+/* CSS reset */
+/* ! zet deze aan in je eigen project */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
   min-height: 100vh;
-  margin: 12px;
-  border: 1px solid black;
+}
+
+/* Typografie */
+h1,
+.xxxl {
+  font-size: clamp(var(--size-lg), 6vw, var(--size-xxl));
+  font-weight: 600; /* stays semibold */
+  letter-spacing: var(--letter-spacing);
+  line-height: clamp(1em, 5vw, var(--size-xxl));
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h2,
+.xxl {
+  font-size: clamp(2.5rem, 5vw, var(--size-xl));
+  font-weight: 600; /* stays semibold */
+  letter-spacing: var(--letter-spacing);
+  line-height: clamp(2.5rem, 4vw, var(--size-xl));
+}
+
+h3,
+.xl {
+  font-size: clamp(var(--size-md), 4vw, 3rem);
+  font-weight: 400; /* regular on sm | semiBold on md+ */
+  letter-spacing: var(--letter-spacing);
+  line-height: clamp(1.5rem, 3.5vw, 1em);
+  text-transform: uppercase;
+}
+
+h4,
+.lg {
+  font-size: clamp(1.5rem, 3.5vw, var(--size-md));
+  font-weight: 400; /* stays regular */
+  letter-spacing: 0;
+  line-height: clamp(var(--size-md), 3vw, 2.5rem);
+}
+
+h5,
+h6,
+.md {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 600; /* stays semibold */
+  letter-spacing: 0;
+  line-height: clamp(var(--size-md), 2vw, 2.5rem);
+}
+
+h6,
+.light {
+  font-weight: 400; /* stays regular */
+}
+
+p,
+.sm {
+  font-size: clamp(var(--size-sm), 2.5vw, 1.125rem);
+  font-weight: 400; /* stays regular */
+  letter-spacing: 0;
+  line-height: clamp(1.5rem, 2.5vw, var(--size-md));
 }
 
 .subtext {
@@ -67,16 +158,33 @@ nav {
   width: 100%;
 }
 
-.word_lid {
-  border: 1px solid black;
-
-  svg {
-    border-left: 1px solid black;
-    margin: auto;
-  }
-}
-
 .cover {
   width: 100%;
   height: auto;
+}
+
+
+
+.pagetop {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.tags {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+  margin-bottom: 5em;
+}
+
+.tags ul{
+  display: flex;
+}
+
+.tags li {
+  border: 1px solid black;
+  padding: 1px 2px;
+  margin: 0px 4px;
 }
